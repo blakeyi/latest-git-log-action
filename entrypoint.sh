@@ -15,4 +15,4 @@ fi
 
 echo $log
 echo ::set-output name=log::$log
-
+export log=$log
