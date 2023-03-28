@@ -5,8 +5,11 @@ branding:
   icon: arrow-right-circle
   color: gray-dark
 inputs:
-  tag:
-    description: 'Specify git tag'
+  type:
+    description: 'Specify git log or git tag'
+    required: false
+  id:
+    description: 'Specify commitID or tagName'
     required: false
 outputs:
   log:
@@ -15,4 +18,5 @@ runs:
   using: 'docker'
   image: 'Dockerfile'
   args:
-    - ${{ inputs.tag }}
+    - ${{ inputs.type }}
+    - ${{ inputs.id }}
